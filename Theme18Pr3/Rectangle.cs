@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,6 +58,19 @@ namespace Theme18Pr3
         {
             base.Print();
             Console.WriteLine($"Площадь прямоугольника - {Area()}\nПериметр прямоугольника - {Perimeter()}");
+        }
+        /// <summary>
+        /// Статический метод ввода данных прямоугольника 
+        /// </summary>
+        /// <returns></returns>
+        public static Rectangle Input()
+        {
+            string name = "Прямоугольник";
+            Console.Write("Введите сторону1 ");
+            int side1 = int.Parse(Console.ReadLine());
+            Console.Write("Введите сторону2 ");
+            int side2 = int.Parse(Console.ReadLine());
+            return new Rectangle(name, side1, side2);
         }
     }
 }
