@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,17 +30,17 @@ namespace Theme18Pr3
         /// <param name="side1">значение стороны1 фигуры</param>
         /// <param name="side2">значение стороны2 фигуры</param>
         /// <param name="side3">значение стороны3 фигуры</param>
-        public Triangle(string name, int side1, int side2,int side3) : base(name)
+        public Triangle(string name, int side1, int side2, int side3) : base(name)
         {
-            if (side1<side2+side3&& side2<side1+side3&&side3<side1+side2 )
+            if (side1 < side2 + side3 && side2 < side1 + side3 && side3 < side1 + side2)
             {
                 this.side1 = side1;
                 this.side2 = side2;
                 this.side3 = side3;
             }
 
-            
-            
+
+
         }
         /// <summary>
         /// Свойства полей side1,side2,side3
@@ -55,7 +55,7 @@ namespace Theme18Pr3
         public override double Area()
         {
             double p = Perimeter() / 2;
-            return Math.Sqrt(p*(p-side1)*(p-side2)*(p-side3));
+            return Math.Sqrt(p * (p - side1) * (p - side2) * (p - side3));
         }
         /// <summary>
         /// Переопределённый метод нахождения периметра из класса Figure
@@ -63,7 +63,7 @@ namespace Theme18Pr3
         /// <returns></returns>
         public override double Perimeter()
         {
-            return side1 + side2 + side3 ;
+            return side1 + side2 + side3;
         }
         /// <summary>
         /// Переопределённый метод вывода информации о фигуре из класса Figure
@@ -72,6 +72,21 @@ namespace Theme18Pr3
         {
             base.Print();
             Console.WriteLine($"Площадь треугольника - {Area():F2}\nПериметр треугольника - {Perimeter()}");
+        }
+        /// <summary>
+        /// Статический метод ввода данных треугольника
+        /// </summary>
+        /// <returns></returns>
+        public static Triangle Input()
+        {
+            string name = "Треугольник";
+            Console.Write("Введите сторону1 ");
+            int side1 = int.Parse(Console.ReadLine());
+            Console.Write("Введите сторону2 ");
+            int side2 = int.Parse(Console.ReadLine());
+            Console.Write("Введите сторону3 ");
+            int side3 = int.Parse(Console.ReadLine());
+            return new Triangle(name, side1, side2,side3);
         }
     }
 }
