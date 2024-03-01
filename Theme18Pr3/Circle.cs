@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,7 @@ namespace Theme18Pr3
         /// <param name="radius">значение радиуса окружности</param>
         public Circle(string name, int radius) : base(name)
         {
-                this.radius = radius;
+            this.radius = radius;
         }
         /// <summary>
         /// Свойства поля radius
@@ -51,6 +51,17 @@ namespace Theme18Pr3
         {
             base.Print();
             Console.WriteLine($"Площадь окружности - {Area():F2}\nПериметр окружности - {Perimeter():F2}");
+        }
+        /// <summary>
+        /// Статический метод ввода данных окружности
+        /// </summary>
+        /// <returns></returns>
+        public static Circle Input()
+        {
+            string name = "Окружность";
+            Console.Write("Введите радиус ");
+            int radius = int.Parse(Console.ReadLine());
+            return new Circle(name, radius);
         }
     }
 }
