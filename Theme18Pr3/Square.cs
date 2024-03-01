@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,7 +42,7 @@ namespace Theme18Pr3
         /// <returns></returns>
         public override double Perimeter()
         {
-            return side1*4;
+            return side1 * 4;
         }
         /// <summary>
         /// Переопределённый метод вывода информации о фигуре из класса Figure
@@ -51,6 +51,17 @@ namespace Theme18Pr3
         {
             base.Print();
             Console.WriteLine($"Площадь квадрата - {Area()}\nПериметр квадрата - {Perimeter()}");
+        }
+        /// <summary>
+        /// Статический метод ввода данных квадрата
+        /// </summary>
+        /// <returns></returns>
+        public static Square Input()
+        {
+            string name = "Квадрат";
+            Console.Write("Введите сторону1 ");
+            int side1 = int.Parse(Console.ReadLine());
+            return new Square(name, side1);
         }
     }
 }
